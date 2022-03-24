@@ -10,7 +10,7 @@ Api criado do zero para o site da cantina do senac!
 - Enviar relatório de compra pdf no email do usuario
 - Login gerando token
 - Armazenar compras
-- Cadastrar deletar atulizar e pegar produtos e usuarios
+- Cadastrar deletar atualizar e pegar produtos e usuarios
 
 # FUNÇÕES FALTANTES
 
