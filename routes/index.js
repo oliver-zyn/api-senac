@@ -14,16 +14,16 @@ router.get('/test', (req, res) => {
     res.render('pages/read', { title: 'Test' })
 })
 
-router.get('/read', (req, res) => {
-    res.render('pages/produtos', { title: 'Read' })
+router.get('/products', (req, res) => {
+    res.render('pages/products', { title: 'Produtos' })
 })
 
-router.get('/create', (req, res) => {
-    res.render('pages/read', { title: 'Create' })
+router.get('/usuarios', (req, res) => {
+    res.render('pages/users', { title: 'Usuários' })
 })
 
-router.get('/delete', (req, res) => {
-    res.render('pages/read', { title: 'Delete' })
+router.get('/orders', (req, res) => {
+    res.render('pages/orders', { title: 'Compras' })
 })
 
 module.exports = router;

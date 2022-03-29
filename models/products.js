@@ -20,6 +20,12 @@ const schema = new Schema({
         type: 'string',
         default: 'https://www.clipartmax.com/png/middle/291-2911742_no-camera-allowed-tools-free-black-white-clipart-images-no-picture-taking.png'
     },
+    diaSemana: {
+        type: 'string',
+        required: true,
+        enum: ['segunda', 'terça', 'querta', 'sexta'],
+        default: 'segunda',
+    },
     descricao: {
         type: 'string',
     }
