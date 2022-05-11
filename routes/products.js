@@ -4,7 +4,7 @@ const authService = require('../services/auth');
 
 const router = express.Router();
 
-router.get('/', authService.authrize, getProducts);
+router.get('/', getProducts);
 router.get('/:id', getProductById);
 router.post('/new', authService.isAdmin, createProducts);
 router.put('/update/:id', authService.isAdmin, updateProduct);

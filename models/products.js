@@ -23,8 +23,8 @@ const schema = new Schema({
     diaSemana: {
         type: 'string',
         required: true,
-        enum: ['segunda', 'terça', 'querta', 'sexta'],
-        default: 'segunda',
+        enum: ['segunda', 'terca', 'quarta', 'quinta', 'sexta'],
+        default: null,
     },
     descricao: {
         type: 'string',

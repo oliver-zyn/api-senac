@@ -8,8 +8,7 @@ const app = require('../index');
 const getUser = async (req, res, next) => {
 
     try{
-
-        const user = await User.findOne();
+        const user = await User.find();
         if(user.roles === 'user') {
             console.log('Usuário!')
         } else {
@@ -45,7 +44,7 @@ const createUser = async (req, res, next) => {
         await User.save;
 
         transporter.sendMail({
-            from: 'jdmarvinmaeldestin02@gmail.com',
+            from: 'nodebot.zyn@gmail.com',
             to: user.email,
             subject: 'Cadastrado com sucesso!',
             html: `
@@ -66,7 +65,7 @@ const createUser = async (req, res, next) => {
             } else {
               console.log('Email sent: ' + info.response);
             }
-          }); 
+          });
 
         res.status(201).send({
             message: 'Usuário Cadastrado com sucesso!',
@@ -98,13 +97,14 @@ const authenticate = async (req, res, next) => {
             return;
         }
 
-        const token = await authService.generateToken({ email: userFind.email, senha: userFind.senha });
+        const token = await authService.generateToken({ email: userFind.email, senha: userFind.senha, roles: userFind.roles });
         
         res.status(201).send({ 
             token: token,
             data: {
                 nome: userFind.nome,
                 email: userFind.email,
+                roles: userFind.roles
             }
         });
     }catch(err){

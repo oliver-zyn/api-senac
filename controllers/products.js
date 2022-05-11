@@ -25,8 +25,10 @@ const createProducts = async (req, res, next) => {
     try{
         const products = await Produto.create({
             nome: req.body.nome,
+            tipoProduto: req.body.tipoProduto,
             preco: req.body.preco,
             imagem: req.body.imagem,
+            diaSemana: req.body.diaSemana,
             descricao: req.body.descricao,
         })
         res.status(200).send('Produto cadastrado com sucesso!');
